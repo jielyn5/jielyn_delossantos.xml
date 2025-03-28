@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Colleges - Library Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            font-size: 12px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            justify-content: center;
+            max-width: 900px;
+            margin: auto;
+            padding-top: 20px;
+            row-gap: 20px;
+        }
+        .card {
+            width: 100%; /* Makes the card rectangular */
+            border: 3px solid #000; /* 3px border */
+            border-radius: 1px;
+            padding: 15px;
+            text-align: left;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            height: 120px; /* Ensures rectangle shape */
+        }
+        .card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 3px solid #000; /* Square border */
+            border-radius: 0; /* Ensures square shape */
+            margin-left: 10px;
+            align-self: flex-start; /* Moves image to the top */
+            margin-top: 5px; /* Fine-tune the position */
+        }
+        .details {
+            font-size: 12px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>ABC Colleges</h1>
+    <h2>Library Users</h2>
+    <div class="container">
+        <script>
+            const students = [
+                {
+                    picture: "https://ilarge.lisimg.com/image/8825948/980full-homer-simpson.jpg",
+                    name: "Homer Simpson",
+                    course: "BSIT",
+                    year_level: "3bg1",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://imagedelivery.net/LBWXYQ-XnKSYxbZ-NuYGqQ/9c1a0c4c-2bb9-4902-1d92-bdaffd320000/avatarhd",
+                    name: "Marge Simpson",
+                    course: "BSIT",
+                    year_level: "3ag2",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://facts.net/wp-content/uploads/2023/08/19-facts-about-bart-simpson-the-simpsons-1693479522.jpg",
+                    name: "Bart Simpson",
+                    course: "BSIT",
+                    year_level: "3ag1",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://easydrawingguides.com/wp-content/uploads/2022/12/how-to-draw-an-easy-lisa-simpson-drawing-featured-image-1200.png",
+                    name: "Lisa Simpson",
+                    course: "BSIT",
+                    year_level: "3bg2",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://www.drawing123.com/wp-content/uploads/2022/12/drawing-Maggie-Simpson-step-8-1.jpg",
+                    name: "Maggie Simpson",
+                    course: "BSIT",
+                    year_level: "3bg2",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://th.bing.com/th/id/R.0199aee712535f2db8ad01787588e6e1?rik=z8qjIsyxayMubw&riu=http%3a%2f%2fwww.postavy.cz%2fobrazky%2fcharles-montgomery-burns-65144.jpg&ehk=4pMo889Q0rihsWB5%2bbh7hupzRK97dDm7%2bkPzql7c1ZQ%3d&risl=&pid=ImgRaw&r=0",
+                    name: "Charles Montgomery Burns",
+                    course: "BSIT",
+                    year_level: "3bg1",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://yt3.googleusercontent.com/ytc/AOPolaTKCKZCRKIG-z2N2Oai1T7nHxEbvvSDZjzNJSoP=s900-c-k-c0x00ffffff-no-rj",
+                    name: "Moe Szyslak",
+                    course: "BSIT",
+                    year_level: "3bg1",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://i.pinimg.com/originals/0e/43/b9/0e43b9b2657491935f1e6e0ba717b71d.jpg",
+                    name: "Principal Seymour Skinner",
+                    course: "BSIT",
+                    year_level: "3ag1",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://i.pinimg.com/736x/77/7d/56/777d56ce5945e7efefae0713235a3581.jpg",
+                    name: "Krusty the Clown",
+                    course: "BSIT",
+                    year_level: "3bg2",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                },
+                {
+                    picture: "https://th.bing.com/th/id/R.20994cf4e8fd65f709364a3655bd01a7?rik=AvVpeqshKYzhVg&riu=http%3a%2f%2fimages6.fanpop.com%2fimage%2fphotos%2f37100000%2fNed-Flanders-ned-flanders-37176770-1024-768.png&ehk=pUZxpTaAHr2mP%2b6jHgrce7APIX1gOUD4ilbnZ0yiFqw%3d&risl=&pid=ImgRaw&r=0",
+                    name: "Ned Flanders",
+                    course: "BSIT",
+                    year_level: "3ag2",
+                    adviser: "Mr. Ramon Dela Cruz",
+                    school_year: "2025-2026"
+                }
+            ];
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const container = document.querySelector(".container");
+                students.forEach(student => {
+                    container.innerHTML += `
+                        <div class="card">
+                            <div class="details">
+                                <p><strong>Name:</strong> ${student.name}</p>
+                                <p><strong>Course:</strong> ${student.course}</p>
+                                <p><strong>Year Level / Section:</strong> ${student.year_level}</p>
+                                <p><strong>Adviser:</strong> ${student.adviser}</p>
+                                <p><strong>School Year:</strong> ${student.school_year}</p>
+                            </div>
+                            <img src="${student.picture}" alt="Profile Picture">
+                        </div>
+                    `;
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
